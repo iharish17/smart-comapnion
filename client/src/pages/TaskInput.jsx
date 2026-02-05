@@ -35,7 +35,7 @@ const TaskInput = () => {
 
       const profile = JSON.parse(localStorage.getItem("smart_profile"));
 
-      const res = await fetch("/api/decompose", {
+      const res = await fetch("https://smart-comapnion.onrender.com/api/decompose", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
