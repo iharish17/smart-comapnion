@@ -98,7 +98,7 @@ const TaskInput = () => {
             !task.trim() || loading ? "disabledBtn" : ""
           }`}
         >
-          {loading ? "Generating..." : "Generate Steps⚡"}
+          {loading ? "Generating..." : "Generate Micro Wins⚡"}
         </button>
       </div>
     </div>
