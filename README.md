@@ -75,7 +75,7 @@ smart-companion/
 
 # ⚙️ Installation & Setup
 1️⃣ **Clone the Repository**
-- git clone https://github.com/your-username/smart-companion.git
+- git clone https://github.com/iharish17/smart-companion.git
 - cd smart-companion
 
 2️⃣ **Setup Backend**
