@@ -21,6 +21,30 @@ const TaskRunner = () => {
     setTaskData(saved);
   }, [navigate]);
 
+  // ✅ TEXT TO SPEECH FUNCTION
+  const speakText = (text) => {
+    if (!window.speechSynthesis) {
+      alert("Text-to-Speech not supported in this browser!");
+      return;
+    }
+
+    window.speechSynthesis.cancel(); // stop previous speech
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    utterance.rate = 1;
+    utterance.pitch = 1;
+
+    window.speechSynthesis.speak(utterance);
+  };
+
+  // ✅ STOP SPEECH FUNCTION
+  const stopSpeech = () => {
+    if (window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+    }
+  };
+
   // Loading UI
   if (!taskData) {
     return (
@@ -34,7 +58,11 @@ const TaskRunner = () => {
   }
 
   // Safety check
-  if (!taskData.steps || !Array.isArray(taskData.steps) || taskData.steps.length === 0) {
+  if (
+    !taskData.steps ||
+    !Array.isArray(taskData.steps) ||
+    taskData.steps.length === 0
+  ) {
     return (
       <div className="page">
         <div className="card">
@@ -53,10 +81,22 @@ const TaskRunner = () => {
   const progress = ((currentStep + 1) / taskData.total_steps) * 100;
 
   const handleDone = () => {
+    stopSpeech(); // stop voice when changing step
+
     if (currentStep === taskData.steps.length - 1) {
       let streak = parseInt(localStorage.getItem("smart_streak") || "0");
       streak += 1;
       localStorage.setItem("smart_streak", streak);
+      navigate("/completed");
+    } else {
+      setCurrentStep((prev) => prev + 1);
+    }
+  };
+
+  const handleSkip = () => {
+    stopSpeech(); // stop voice when skipping
+
+    if (currentStep === taskData.steps.length - 1) {
       navigate("/completed");
     } else {
       setCurrentStep((prev) => prev + 1);
@@ -123,12 +163,30 @@ const TaskRunner = () => {
           </p>
         </div>
 
+        {/* ✅ Voice Buttons */}
+        <div className="row">
+          <button
+            className="btn btn-secondary"
+            onClick={() =>
+              speakText(
+                `Step ${currentStep + 1}. ${step.text}. Estimated time ${step.estimated_time_minutes} minutes.`
+              )
+            }
+          >
+            🔊 Read Step
+          </button>
+
+          <button className="btn btn-secondary" onClick={stopSpeech}>
+            ⏹ Stop Voice
+          </button>
+        </div>
+
         <div className="row">
           <button className="btn btn-success" onClick={handleDone}>
             Done ✅
           </button>
 
-          <button className="btn btn-secondary" onClick={handleDone}>
+          <button className="btn btn-secondary" onClick={handleSkip}>
             Skip ➡️
           </button>
         </div>
@@ -164,11 +222,30 @@ const TaskRunner = () => {
                   <p className="microTime">
                     ⏱ {m.estimated_time_minutes} min
                   </p>
+
+                  {/* ✅ Read Micro Step */}
+                  <button
+                    className="btn btn-secondary"
+                    style={{ marginTop: "8px" }}
+                    onClick={() =>
+                      speakText(
+                        `Micro step ${i + 1}. ${m.text}. Estimated time ${m.estimated_time_minutes} minutes.`
+                      )
+                    }
+                  >
+                    🔊 Read
+                  </button>
                 </div>
               ))}
             </div>
 
-            <button className="btn btn-primary" onClick={() => setShowModal(false)}>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                stopSpeech();
+                setShowModal(false);
+              }}
+            >
               Close ✖
             </button>
           </div>

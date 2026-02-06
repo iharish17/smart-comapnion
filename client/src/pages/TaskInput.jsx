@@ -29,6 +29,34 @@ const TaskInput = () => {
     }
   }, [navigate]);
 
+  // ✅ VOICE INPUT FUNCTION (Speech-to-Text)
+  const startVoiceInput = () => {
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert("Speech Recognition not supported in this browser!");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.interimResults = false;
+    recognition.continuous = false;
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setTask(transcript);
+    };
+
+    recognition.onerror = (event) => {
+      console.log("Voice Error:", event.error);
+      alert("Voice input failed. Try again.");
+    };
+
+    recognition.start();
+  };
+
   const handleGenerate = async () => {
     try {
       setLoading(true);
@@ -78,6 +106,16 @@ const TaskInput = () => {
           disabled={loading}
         />
 
+        {/* ✅ Voice Input Button */}
+        <button
+          onClick={startVoiceInput}
+          disabled={loading}
+          className="btn btn-secondary"
+          style={{ marginTop: "10px" }}
+        >
+          🎤 Speak Task
+        </button>
+
         <div className="chips">
           {suggestions.map((s, i) => (
             <button
@@ -98,7 +136,9 @@ const TaskInput = () => {
             !task.trim() || loading ? "disabledBtn" : ""
           }`}
         >
-          {loading ? "⏳ Generating... Please wait while request is processing." : "Generate Micro-Wins⚡"}
+          {loading
+            ? "⏳ Generating... Please wait while request is processing."
+            : "Generate Micro-Wins⚡"}
         </button>
       </div>
     </div>
