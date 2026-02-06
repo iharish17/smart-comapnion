@@ -26,21 +26,10 @@ If a step feels too hard, users can simplify it into even smaller micro-actions.
 ✅ **Motivational Prompts**  
 Encouraging messages appear after a few steps to keep users confident.
 
-✅ **Decision Fatigue Reduction**  
-Pre-defined options and suggestions to avoid overthinking.
-
-✅ **Text-to-Speech (Voice Read)**  
-Reads steps aloud for better accessibility.
-
 ✅ **Font Toggle Support**  
 Switch between:
 - **Lexend**
 - **OpenDyslexic**
-
-✅ **Progressive Loading + Latency Handling**  
-Shows instant steps first while loading more progressively.
-
----
 
 ## 🏗️ Tech Stack
 
