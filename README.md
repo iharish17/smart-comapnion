@@ -75,43 +75,43 @@ smart-companion/
 
 # ⚙️ Installation & Setup
 1️⃣ **Clone the Repository**
-git clone https://github.com/your-username/smart-companion.git
-cd smart-companion
+- git clone https://github.com/your-username/smart-companion.git
+- cd smart-companion
 
-## 2️⃣ **Setup Backend**
-cd backend
-npm install
-npm start
+2️⃣ **Setup Backend**
+- cd backend
+- npm install
+- npm start
 
-## 3️⃣ **Setup Frontend**
-cd frontend
-npm install
-npm start
+3️⃣ **Setup Frontend**
+- cd frontend
+- npm install
+- npm start
 
 🔑 **Environment Variables**
-Create a .env file inside the backend folder:
-GEMINI_API_KEY=your_api_key_here
-PORT=5000
+- Create a .env file inside the backend folder:
+- GEMINI_API_KEY=your_api_key_here
+- PORT=5000
 
 ---
 
 # 🚀 How It Works
 
-User enters a large task/goal
-AI breaks it into MicroWins
-Each step shows:
-Description
-Estimated time
-If user feels overwhelmed → enable Overwhelm Mode
-AI simplifies the step into smaller micro-actions
-Motivational prompts keep user engaged
+- User enters a large task/goal
+- AI breaks it into MicroWins
+- Each step shows:
+- Description
+- Estimated time
+- If user feels overwhelmed → enable Overwhelm Mode
+- AI simplifies the step into smaller micro-actions
+- Motivational prompts keep user engaged
 
 ---
 
 # 🎯 Use Cases
 
-Students managing assignments
-Developers breaking down projects
-People with ADHD managing daily routines
-Productivity planning
-Mental overwhelm reduction
+- Students managing assignments
+- Developers breaking down projects
+- People with ADHD managing daily routines
+- Productivity planning
+- Mental overwhelm reduction
