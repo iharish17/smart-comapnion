@@ -96,7 +96,7 @@ npm start
 
 🔑 Environment Variables
 
-#Create a .env file inside the backend folder:
+Create a .env file inside the backend folder:
 GEMINI_API_KEY=your_api_key_here
 PORT=5000
 
