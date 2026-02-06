@@ -42,7 +42,7 @@ Switch between:
 - **Express.js**
 
 ### AI Integration
-- **OpenAI API (LLM-based step generation)**
+- **GEMINI API (LLM-based step generation)**
 
 ---
 
