@@ -2,71 +2,76 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #f0f2f7;
+  background: #f7f8fc;
   color: #111827;
 }
 
+/* MAIN PAGE */
 .page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 90px 20px;
+  padding: 80px 20px;
 }
 
+/* CARD */
 .card {
   width: 100%;
-  max-width: 950px;
-  padding: 55px 65px;
+  max-width: 680px;
+  padding: 45px 45px;
   background: #ffffff;
-  border-radius: 22px;
+  border-radius: 18px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0px 18px 55px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 20px 55px rgba(0, 0, 0, 0.06);
 }
 
+/* TITLE */
 .title {
-  font-size: 40px;
-  font-weight: 900;
-  letter-spacing: -0.8px;
-  margin-bottom: 14px;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  margin-bottom: 10px;
   color: #111827;
   line-height: 1.25;
+  text-align: center;
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: 15px;
   color: #6b7280;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   line-height: 1.6;
-  max-width: 650px;
+  text-align: center;
 }
 
+/* LABEL */
 .label {
   display: block;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 10px;
   color: #111827;
 }
 
+/* INPUTS */
 .input,
 .textarea,
 .select {
   width: 100%;
-  padding: 16px 18px;
-  border-radius: 14px;
-  border: 1px solid #d1d5db;
+  padding: 15px 18px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
   background: #ffffff;
   color: #111827;
-  font-size: 16px;
+  font-size: 15px;
   outline: none;
   transition: 0.2s;
-  margin-bottom: 24px;
-  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05);
+  margin-bottom: 18px;
 }
 
 .textarea {
@@ -77,26 +82,28 @@ body {
 .input:focus,
 .textarea:focus,
 .select:focus {
-  border-color: #60a5fa;
-  box-shadow: 0px 0px 0px 4px rgba(96, 165, 250, 0.25);
+  border-color: #3b82f6;
+  box-shadow: 0px 0px 0px 4px rgba(59, 130, 246, 0.2);
 }
 
+/* CHIPS */
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 12px;
-  margin-bottom: 40px;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  margin-bottom: 35px;
 }
 
 .chip {
-  background: #eff6ff;
+  background: #f1f5ff;
   border: 1px solid #dbeafe;
   padding: 10px 18px;
   border-radius: 999px;
   cursor: pointer;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   color: #2563eb;
   transition: 0.2s;
 }
@@ -106,14 +113,15 @@ body {
   transform: translateY(-2px);
 }
 
+/* BUTTON BASE */
 .btn {
   width: 100%;
-  padding: 18px;
-  border-radius: 16px;
+  padding: 16px;
+  border-radius: 14px;
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 18px;
+  font-weight: 700;
   transition: 0.25s;
   display: flex;
   align-items: center;
@@ -121,111 +129,123 @@ body {
   gap: 10px;
 }
 
+/* PRIMARY BUTTON (MATCH SCREENSHOT) */
 .btn-primary {
-  background: #8bd3f7;
+  background: linear-gradient(90deg, #0ea5e9, #0284c7);
   color: white;
-  box-shadow: 0px 10px 30px rgba(139, 211, 247, 0.6);
+  box-shadow: 0px 10px 25px rgba(2, 132, 199, 0.35);
 }
 
 .btn-primary:hover {
-  background: #6ec7f5;
+  background: linear-gradient(90deg, #0284c7, #0369a1);
   transform: translateY(-2px);
 }
 
-.btn-success {
-  background: #22c55e;
-  color: white;
-}
-
-.btn-success:hover {
-  background: #16a34a;
-}
-
+/* SECONDARY */
 .btn-secondary {
-  background: #e5e7eb;
+  background: #f3f4f6;
   color: #111827;
+  font-weight: 700;
 }
 
 .btn-secondary:hover {
-  background: #d1d5db;
+  background: #e5e7eb;
 }
 
-.btn-purple {
-  background: #a855f7;
+/* SUCCESS */
+.btn-success {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
   color: white;
-  margin-top: 18px;
-  padding: 18px;
-  font-size: 18px;
-  border-radius: 18px;
+  box-shadow: 0px 10px 20px rgba(34, 197, 94, 0.25);
+}
+
+.btn-success:hover {
+  background: linear-gradient(90deg, #16a34a, #15803d);
+}
+
+/* PURPLE */
+.btn-purple {
+  background: linear-gradient(90deg, #a855f7, #7c3aed);
+  color: white;
+  margin-top: 16px;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 14px;
+  box-shadow: 0px 10px 20px rgba(124, 58, 237, 0.25);
 }
 
 .btn-purple:hover {
-  background: #9333ea;
+  background: linear-gradient(90deg, #7c3aed, #6d28d9);
 }
 
+/* DISABLED */
 .disabledBtn {
-  opacity: 0.5;
+  opacity: 0.55;
   cursor: not-allowed;
   transform: none;
 }
 
+/* ROW BUTTONS */
 .row {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   margin-top: 20px;
 }
 
 .row button {
   flex: 1;
-  font-size: 17px;
-  padding: 16px;
-  border-radius: 16px;
-  font-weight: 800;
+  font-size: 15px;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 700;
 }
 
+/* PROGRESS BAR */
 .progressBar {
-  height: 12px;
+  height: 10px;
   background: #e5e7eb;
   border-radius: 999px;
   overflow: hidden;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .progressFill {
-  height: 12px;
-  background: #60a5fa;
+  height: 10px;
+  background: #3b82f6;
   width: 0%;
   transition: 0.3s;
   border-radius: 999px;
 }
 
+/* STEP BOX */
 .stepBox {
-  background: #f9fafb;
+  background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 28px;
-  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.04);
 }
 
 .stepText {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #111827;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .stepTime {
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 12px;
   color: #6b7280;
   font-weight: 600;
 }
 
+/* NOTE */
 .smallNote {
-  font-size: 14px;
+  font-size: 13px;
   color: #6b7280;
-  margin-top: 28px;
+  margin-top: 25px;
   text-align: center;
   line-height: 1.6;
 }
@@ -234,14 +254,16 @@ body {
   text-align: center;
 }
 
+/* BADGE BOX */
 .badgeBox {
-  margin-top: 22px;
-  padding: 18px;
-  border-radius: 18px;
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 14px;
   background: #f9fafb;
   border: 1px solid #e5e7eb;
 }
 
+/* MODAL */
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -259,9 +281,9 @@ body {
 .modalBox {
   background: white;
   width: 100%;
-  max-width: 560px;
-  border-radius: 22px;
-  padding: 28px;
+  max-width: 520px;
+  border-radius: 18px;
+  padding: 25px;
   box-shadow: 0px 18px 50px rgba(0, 0, 0, 0.25);
   animation: popUp 0.2s ease-in-out;
 }
@@ -278,8 +300,8 @@ body {
 }
 
 .modalTitle {
-  font-size: 22px;
-  font-weight: 900;
+  font-size: 20px;
+  font-weight: 800;
   margin-bottom: 8px;
   color: #111827;
 }
@@ -291,6 +313,7 @@ body {
   line-height: 1.5;
 }
 
+/* MICRO STEPS */
 .microStepsList {
   max-height: 320px;
   overflow-y: auto;
@@ -299,42 +322,65 @@ body {
 }
 
 .microStepItem {
-  background: #eff6ff;
+  background: #f1f5ff;
   border: 1px solid #dbeafe;
-  padding: 15px;
-  border-radius: 16px;
+  padding: 14px;
+  border-radius: 14px;
   margin-bottom: 12px;
 }
 
 .microText {
-  font-size: 15px;
-  font-weight: 900;
+  font-size: 14px;
+  font-weight: 700;
   margin-bottom: 6px;
   color: #111827;
 }
 
 .microTime {
-  font-size: 13px;
+  font-size: 12px;
   color: #6b7280;
   font-weight: 600;
 }
 
+/* HEADER */
+.header {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+
+.headerTitle {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.headerTagline {
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+/* MOBILE */
 @media (max-width: 700px) {
   .card {
-    padding: 38px 22px;
+    padding: 35px 22px;
   }
 
   .title {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .subtitle {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .btn {
-    font-size: 18px;
-    padding: 16px;
+    font-size: 16px;
+    padding: 14px;
   }
 
   .row {
@@ -346,30 +392,10 @@ body {
   }
 
   .stepBox {
-    padding: 22px;
+    padding: 18px;
   }
 
   .stepText {
-    font-size: 18px;
+    font-size: 15px;
   }
-}
-.header {
-  width: 100%;
-  max-width: 950px;
-  margin: 0 auto 35px auto;
-  text-align: center;
-}
-
-.headerTitle {
-  font-size: 34px;
-  font-weight: 900;
-  color: #111827;
-  margin-bottom: 8px;
-  letter-spacing: -0.6px;
-}
-
-.headerTagline {
-  font-size: 16px;
-  font-weight: 600;
-  color: #6b7280;
 }
