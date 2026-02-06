@@ -26,10 +26,16 @@ If a step feels too hard, users can simplify it into even smaller micro-actions.
 ✅ **Motivational Prompts**  
 Encouraging messages appear after a few steps to keep users confident.
 
-✅ **Font Toggle Support**  
-Switch between:
-- **Lexend**
-- **OpenDyslexic**
+✅ **Decision Fatigue Reduction**  
+Pre-defined options and suggestions to avoid overthinking.
+
+✅ **Text-to-Speech (Voice Read)**  
+Reads steps aloud for better accessibility.
+
+✅ **Progressive Loading + Latency Handling**  
+Shows instant steps first while loading more progressively.
+
+---
 
 ## 🏗️ Tech Stack
 
@@ -42,7 +48,7 @@ Switch between:
 - **Express.js**
 
 ### AI Integration
-- **GEMINI API (LLM-based step generation)**
+- **OpenAI API (LLM-based step generation)**
 
 ---
 
@@ -64,32 +70,32 @@ smart-companion/
 │   └── package.json
 │
 └── README.md
+```
 
 
 
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
+##⚙️ Installation & Setup
+#1️⃣ Clone the Repository
 git clone https://github.com/your-username/smart-companion.git
 cd smart-companion
 
-2️⃣ Setup Backend
+#2️⃣ Setup Backend
 cd backend
 npm install
 npm start
 
-3️⃣ Setup Frontend
+#3️⃣ Setup Frontend
 cd frontend
 npm install
 npm start
 
-🔑 Environment Variables
-
+#🔑 Environment Variables
 Create a .env file inside the backend folder:
 GEMINI_API_KEY=your_api_key_here
 PORT=5000
 
-🚀 How It Works
+##🚀 How It Works
 
 User enters a large task/goal
 AI breaks it into MicroWins
@@ -100,7 +106,7 @@ If user feels overwhelmed → enable Overwhelm Mode
 AI simplifies the step into smaller micro-actions
 Motivational prompts keep user engaged
 
-🎯 Use Cases
+##🎯 Use Cases
 
 Students managing assignments
 Developers breaking down projects
